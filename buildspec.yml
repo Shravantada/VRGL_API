@@ -1,8 +1,4 @@
 version: 0.2
-env:
-  variables:
-    working_environment: "local"
-
    parameter-store:
      vrgl_db_host_url: "/VRGL/db/host_url"
      vrgl_app_db_name: "/VRGL/db/app_db_name"
@@ -15,7 +11,7 @@ phases:
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 474668418298.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
-      - docker build -t vrgl-api --build-arg working_environment=$working_environment --build-arg vrgl_db_host_url=qa-vrgl.cts0qv39ugox.us-east-1.rds.amazonaws.com --build-arg vrgl_app_db_name=vrgl-app --build-arg vrgl_db_usrname=user_adaptiveai_developers --build-arg vrgl_db_pwd='MDP!wpx3fkf6pfc9ctq' --build-arg vrgl_security_db_name=vrgl-security .
+      - docker build -t vrgl-api --build-arg vrgl_db_host_url=qa-vrgl.cts0qv39ugox.us-east-1.rds.amazonaws.com --build-arg vrgl_app_db_name=vrgl-app --build-arg vrgl_db_usrname=user_adaptiveai_developers --build-arg vrgl_db_pwd='MDP!wpx3fkf6pfc9ctq' --build-arg vrgl_security_db_name=vrgl-security .
       - docker tag vrgl-api:latest 474668418298.dkr.ecr.us-east-1.amazonaws.com/vrgl-api:latest
   post_build:
     commands:
