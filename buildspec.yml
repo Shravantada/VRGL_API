@@ -3,12 +3,12 @@ env:
   variables:
     working_environment: "local"
 
-    parameter-store:
-       vrgl_db_host_url: "/VRGL/db/host_url"
-       vrgl_app_db_name: "/VRGL/db/app_db_name"
-       vrgl_db_usrname: "/VRGL/db/db_usrname"
-       vrgl_db_pwd: "/VRGL/db/db_pwd"
-       vrgl_security_db_name: "/VRGL/db/security_db_name"
+   parameter-store:
+     vrgl_db_host_url: "/VRGL/db/host_url"
+     vrgl_app_db_name: "/VRGL/db/app_db_name"
+     vrgl_db_usrname: "/VRGL/db/db_usrname"
+     vrgl_db_pwd: "/VRGL/db/db_pwd"
+     vrgl_security_db_name: "/VRGL/db/security_db_name"
 phases:
   pre_build:
     commands: 
