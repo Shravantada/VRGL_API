@@ -1,4 +1,5 @@
 version: 0.2
+env:
    parameter-store:
      vrgl_db_host_url: "/VRGL/db/host_url"
      vrgl_app_db_name: "/VRGL/db/app_db_name"
